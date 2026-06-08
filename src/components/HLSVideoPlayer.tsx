@@ -52,6 +52,16 @@ export default function HLSVideoPlayer({
       } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
         // Fallback for native Safari HLS support
         video.src = src;
+        const playNative = () => {
+          video.playbackRate = playbackRate;
+          if (autoPlay) {
+            video.play().catch(err => console.log('Native HLS play error:', err));
+          }
+        };
+        video.addEventListener('loadedmetadata', playNative);
+        if (video.readyState >= 1) {
+          playNative();
+        }
       }
     } else {
       // Standard video file fallback (MP4, WebM, etc.)

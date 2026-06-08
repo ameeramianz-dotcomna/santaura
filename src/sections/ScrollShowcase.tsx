@@ -60,13 +60,15 @@ export default function ScrollShowcase() {
     const container = containerRef.current;
     if (!trigger || !container) return;
 
-    // Create GSAP ScrollTrigger to track scroll progress and update active state
+    // Create GSAP ScrollTrigger to track scroll progress, pin the container, and update active state
     const scrollTl = gsap.timeline({
       scrollTrigger: {
         trigger: trigger,
         start: 'top top',
         end: 'bottom bottom',
         scrub: 1.5,
+        pin: container,
+        pinSpacing: false,
         onUpdate: (self) => {
           const progress = self.progress;
           // Determine active stage based on scroll progress
@@ -141,10 +143,10 @@ export default function ScrollShowcase() {
   return (
     <div ref={triggerRef} id="showcase" className="relative h-[300vh] bg-black">
       
-      {/* Sticky Frame */}
+      {/* Pinned Frame */}
       <div 
         ref={containerRef}
-        className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center"
+        className="relative h-screen w-full overflow-hidden flex items-center justify-center"
       >
         
         {/* Luxury Fixed Background Glows */}
@@ -193,10 +195,10 @@ export default function ScrollShowcase() {
               return (
                 <div 
                   key={idx}
-                  className={`absolute w-full max-w-xs md:max-w-md pointer-events-none flex flex-col justify-center ${
+                  className={`absolute w-full max-w-[280px] sm:max-w-xs md:max-w-md pointer-events-none flex flex-col justify-center ${
                     isLeft 
-                      ? 'left-0 md:left-6 text-left items-start' 
-                      : 'right-0 md:right-6 text-right items-end'
+                      ? 'left-4 md:left-12 text-left items-start' 
+                      : 'right-4 md:right-12 text-right items-end'
                   }`}
                 >
                   <AnimatePresence>

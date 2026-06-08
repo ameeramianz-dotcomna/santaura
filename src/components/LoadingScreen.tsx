@@ -47,7 +47,7 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
           <div className="absolute inset-0 z-0 overflow-hidden bg-black">
             <HLSVideoPlayer
               src="/lodder/playlist.m3u8"
-              className="absolute inset-0 w-[calc(100%+5rem)] md:w-[calc(100%+10rem)] h-full object-cover ml-20 md:ml-40"
+              className="absolute inset-0 w-full md:w-[calc(100%+10rem)] h-full object-cover ml-0 md:ml-40"
               muted
               autoPlay
               loop={false}

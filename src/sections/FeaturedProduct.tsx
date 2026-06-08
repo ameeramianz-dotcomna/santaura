@@ -61,7 +61,7 @@ const PRODUCTS: Record<string, Product> = {
 };
 
 const HOTSPOTS = [
-  { id: 'perfume', top: '82%', left: '15%', productId: 'perfume' }
+  { id: 'perfume', top: '88%', left: '12%', productId: 'perfume' }
 ];
 
 export default function FeaturedProduct() {

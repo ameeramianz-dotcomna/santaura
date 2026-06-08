@@ -709,6 +709,24 @@ export default function FeaturedProduct() {
                       </p>
                     </div>
 
+                    {/* Product Summary Card on Success Screen */}
+                    <div className="flex gap-4 items-center bg-white/2 border border-white/5 rounded-lg p-4 w-full text-left">
+                      <img
+                        src={checkoutProduct.thumbnail}
+                        alt=""
+                        className="w-14 h-14 object-contain bg-white/5 rounded border border-white/10"
+                      />
+                      <div className="flex-1">
+                        <h4 className="text-xs font-serif text-cream uppercase font-bold tracking-wide leading-tight">
+                          {checkoutProduct.name}
+                        </h4>
+                        <span className="text-[10px] text-muted block mt-1">Quantity: {checkoutQuantity}</span>
+                      </div>
+                      <span className="text-xs font-serif text-primary font-bold">
+                        ${(checkoutProduct.price * checkoutQuantity).toFixed(2)}
+                      </span>
+                    </div>
+
                     {/* Order Reference details */}
                     <div className="bg-white/2 border border-white/5 rounded p-4 w-full text-xs font-mono text-cream flex justify-between tracking-wide">
                       <span className="text-muted font-sans font-bold">ORDER ID:</span>

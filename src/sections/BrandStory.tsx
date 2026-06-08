@@ -46,15 +46,16 @@ export default function BrandStory() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1 }}
-                alt="SCENTAURA Brand Model Portrait"
+                src="/Crafting/craft.png"
+                alt="SCENTAURA Crafting Process"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />
               <div className="absolute bottom-6 left-6 z-20 text-left">
                 <span className="text-[10px] font-sans tracking-[0.2em] text-primary font-bold uppercase">
-                  SCENTAURA Homme
+                  SCENTAURA Atelier
                 </span>
                 <h4 className="text-lg font-serif text-cream uppercase font-light">
-                  A Bold Stature
+                  Artisanal Alchemy
                 </h4>
               </div>
             </div>

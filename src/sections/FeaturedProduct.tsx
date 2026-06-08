@@ -25,8 +25,8 @@ const PRODUCTS: Record<string, Product> = {
     name: 'SCENTAURA Extrait de Parfum',
     price: 125.00,
     description: 'Our signature blend of ripe Pineapple, Bergamot, smoky Birch, and luxurious Ambergris. Blended at an exceptional 25% fragrance oil loading for extreme longevity.',
-    thumbnail: '/herosection/p1.png',
-    gallery: ['/herosection/p1.png', '/model/p4.png', '/notesbg/1.png'],
+    thumbnail: '/Crafting/craft.png',
+    gallery: ['/Crafting/craft.png', '/model/p4.png', '/notesbg/1.png'],
     features: ['25% Oil Concentration', 'Extreme 12+ Hr Longevity', 'Hand-finished glass bottle', 'Signature sillage trail'],
     reviews: [
       { author: 'Alexander V.', rating: 5, text: 'SCENTAURA is a masterwork. The opening pineapple is crisp, transitioning into a smoky birch that commands absolute authority.' },

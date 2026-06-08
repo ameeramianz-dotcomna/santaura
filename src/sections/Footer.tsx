@@ -26,12 +26,12 @@ export default function Footer() {
             <a href="#home" className="flex items-center gap-3 group">
               <img
                 src="/logo/logo1.png"
-                alt="SENTAURA Logo"
+                alt="SCENTAURA Logo"
                 className="h-10 w-auto object-contain"
               />
               <div className="flex flex-col">
                 <span className="text-sm font-serif tracking-[0.25em] text-cream uppercase transition-colors duration-300 group-hover:text-primary">
-                  SENTAURA
+                  SCENTAURA
                 </span>
                 <span className="text-[7px] tracking-[0.2em] text-accent uppercase font-sans">
                   Haute Parfumerie
@@ -116,7 +116,7 @@ export default function Footer() {
         {/* Lower footer copyright */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] uppercase tracking-widest font-sans">
           <div>
-            &copy; {new Date().getFullYear()} SENTAURA. All rights reserved.
+            &copy; {new Date().getFullYear()} SCENTAURA. All rights reserved.
           </div>
           
           <div className="flex gap-6">

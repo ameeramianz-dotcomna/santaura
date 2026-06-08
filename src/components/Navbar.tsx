@@ -44,13 +44,13 @@ export default function Navbar() {
             <div className="h-10 md:h-12 w-auto flex items-center justify-center relative">
               <img
                 src="/logo/logo1.png"
-                alt="SENTAURA Logo"
+                alt="SCENTAURA Logo"
                 className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
               />
             </div>
             <div className="flex flex-col">
               <span className="text-sm md:text-base font-serif tracking-[0.25em] text-cream uppercase transition-colors duration-300 group-hover:text-primary">
-                SENTAURA
+                SCENTAURA
               </span>
               <span className="text-[7px] tracking-[0.2em] text-accent uppercase font-sans">
                 Haute Parfumerie
@@ -107,11 +107,11 @@ export default function Navbar() {
               <div className="flex items-center gap-3">
                 <img
                   src="/logo/logo1.png"
-                  alt="SENTAURA Logo"
+                  alt="SCENTAURA Logo"
                   className="h-10 w-auto object-contain"
                 />
                 <span className="text-sm font-serif tracking-[0.25em] text-cream uppercase">
-                  SENTAURA
+                  SCENTAURA
                 </span>
               </div>
               <button

@@ -229,7 +229,7 @@ export default function Hero() {
                 variants={itemVariants}
                 className="text-5xl md:text-8xl font-serif font-light tracking-[0.2em] text-white leading-tight uppercase select-none"
               >
-                SENTAURA
+                SCENTAURA
               </motion.h1>
             </div>
 

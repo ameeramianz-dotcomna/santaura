@@ -35,16 +35,6 @@ export default function FeaturedProduct() {
             <div className="absolute w-[80%] aspect-square rounded-full bg-primary/5 blur-[100px] pointer-events-none group-hover:bg-primary/10 transition-all duration-700" />
             
             <div className="w-full max-w-md aspect-[4/5] bg-black/35 border border-white/5 p-8 flex items-center justify-center rounded-lg overflow-hidden relative group/prod">
-              {/* Model Image Campaign Backdrop */}
-              <picture className="absolute inset-0 w-full h-full pointer-events-none select-none">
-                <source media="(max-width: 1023px)" srcSet="/model/p4 (2).png" />
-                <img 
-                  src="/model/p4.png" 
-                  alt="SENTAURA Brand Model Portrait"
-                  className="w-full h-full object-cover opacity-45 group-hover/prod:opacity-35 transition-opacity duration-700 pointer-events-none"
-                />
-              </picture>
-              
               {/* Luxury dark gradient overlay for text readability & bottle pop */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/25 z-10 pointer-events-none" />
 
@@ -58,7 +48,7 @@ export default function FeaturedProduct() {
                 transition={{ duration: 0.8, ease: 'easeOut' }}
                 whileHover={{ scale: 1.05 }}
                 src="/herosection/p1.png"
-                alt="SENTAURA Extrait de Parfum Bottle"
+                alt="SCENTAURA Extrait de Parfum Bottle"
                 className="max-h-[85%] max-w-[85%] object-contain filter drop-shadow-[0_20px_45px_rgba(0,0,0,0.85)] drop-shadow-[0_5px_15px_rgba(212,164,74,0.15)] transition-transform duration-700 z-20"
               />
               <span className="absolute top-6 left-6 text-[9px] font-sans tracking-[0.25em] text-primary font-bold border border-primary/20 px-3 py-1 bg-black/50 backdrop-blur-md z-30">
@@ -82,7 +72,7 @@ export default function FeaturedProduct() {
               </div>
 
               <h3 className="text-4xl font-serif text-cream uppercase tracking-wide leading-tight">
-                SENTAURA <br />
+                SCENTAURA <br />
                 <span className="italic font-normal text-primary">Extrait de Parfum</span>
               </h3>
               
@@ -93,7 +83,7 @@ export default function FeaturedProduct() {
             </div>
 
             <p className="text-body text-xs md:text-sm font-light leading-relaxed">
-              Our signature scent profile blends the crisp brightness of ripe Pineapple and Bergamot with a smoky, rich heart of Birch and Patchouli. Grounded in luxurious Ambergris, Oakmoss, and Vanilla, SENTAURA is the ultimate sensory statement of authority.
+              Our signature scent profile blends the crisp brightness of ripe Pineapple and Bergamot with a smoky, rich heart of Birch and Patchouli. Grounded in luxurious Ambergris, Oakmoss, and Vanilla, SCENTAURA is the ultimate sensory statement of authority.
             </p>
 
             {/* Note tags */}

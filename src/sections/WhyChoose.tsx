@@ -54,12 +54,12 @@ export default function WhyChoose() {
             </span>
             <h2 className="text-4xl md:text-5xl font-serif text-cream uppercase tracking-wide leading-tight">
               Why Choose <br />
-              <span className="italic font-normal text-primary">SENTAURA</span>
+              <span className="italic font-normal text-primary">SCENTAURA</span>
             </h2>
           </div>
           <div className="lg:max-w-md">
             <p className="text-body text-xs md:text-sm font-light leading-relaxed">
-              Every detail of SENTAURA represents the pinnacle of luxury perfumery, combining hand-crafted precision with the world's most luxurious raw materials.
+              Every detail of SCENTAURA represents the pinnacle of luxury perfumery, combining hand-crafted precision with the world's most luxurious raw materials.
             </p>
           </div>
         </div>

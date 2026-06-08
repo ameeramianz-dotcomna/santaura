@@ -60,7 +60,7 @@ export default function Contact() {
                 Private Consultation
               </span>
               <h3 className="text-2xl font-serif text-cream uppercase tracking-wider">
-                SENTAURA Atelier
+                SCENTAURA Atelier
               </h3>
               <p className="text-body text-xs md:text-sm font-light leading-relaxed max-w-md">
                 For retail placements, press requests, or bespoke blend queries, our house is open to assist. You can reach out directly or schedule an appointment.
@@ -75,7 +75,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-[10px] uppercase tracking-widest text-muted font-bold font-sans">Email</h4>
-                  <p className="text-cream text-sm font-serif">atelier@sentaura.com</p>
+                  <p className="text-cream text-sm font-serif">atelier@scentaura.com</p>
                 </div>
               </div>
 
@@ -85,7 +85,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-[10px] uppercase tracking-widest text-muted font-bold font-sans">Concierge</h4>
-                  <p className="text-cream text-sm font-serif">+1 (800) SENTAURA</p>
+                  <p className="text-cream text-sm font-serif">+1 (800) SCENTAURA</p>
                 </div>
               </div>
 
@@ -209,7 +209,7 @@ export default function Contact() {
                     Thank You
                   </h4>
                   <p className="text-body text-xs md:text-sm font-light max-w-sm leading-relaxed">
-                    Your inquiry has been routed to the SENTAURA concierge. A house representative will connect with you via email within 24 hours.
+                    Your inquiry has been routed to the SCENTAURA concierge. A house representative will connect with you via email within 24 hours.
                   </p>
                 </motion.div>
               )}

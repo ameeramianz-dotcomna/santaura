@@ -5,13 +5,13 @@ const REVIEWS = [
   {
     name: 'Alexander V.',
     role: 'Verified Collector',
-    quote: 'SENTAURA is a masterwork. The opening pineapple is crisp and natural, transitioning into a smoky birch that commands absolute authority. The sillage is legendary.',
+    quote: 'SCENTAURA is a masterwork. The opening pineapple is crisp and natural, transitioning into a smoky birch that commands absolute authority. The sillage is legendary.',
     rating: 5
   },
   {
     name: 'Eleanor K.',
     role: 'Fragrance Connoisseur',
-    quote: 'Unlike other inspired blends, SENTAURA holds its ground with a heavy extrait concentration. It adapts beautifully to the skin, lingering past twelve hours easily.',
+    quote: 'Unlike other inspired blends, SCENTAURA holds its ground with a heavy extrait concentration. It adapts beautifully to the skin, lingering past twelve hours easily.',
     rating: 5
   },
   {

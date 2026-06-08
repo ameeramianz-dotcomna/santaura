@@ -27,10 +27,10 @@ export default function BrandStory() {
             <div className="w-20 h-[1px] bg-primary" />
             <div className="space-y-4 text-body text-xs md:text-sm font-light leading-relaxed">
               <p>
-                SENTAURA was born from a singular pursuit: to capture the ultimate projection of elegance and memory. Inspired by the legendary notes profiles that have defined generations, we sought to build a fragrance that represents the absolute apex of performance and olfactory art.
+                SCENTAURA was born from a singular pursuit: to capture the ultimate projection of elegance and memory. Inspired by the legendary notes profiles that have defined generations, we sought to build a fragrance that represents the absolute apex of performance and olfactory art.
               </p>
               <p>
-                Every single blend is curated and hand-bottled in limited batches, ensuring that the unique complexity of the crisp pineapple opening, warm birch core, and premium ambergris sillage remains pristine. SENTAURA is not merely a fragrance; it is a signature of authority.
+                Every single blend is curated and hand-bottled in limited batches, ensuring that the unique complexity of the crisp pineapple opening, warm birch core, and premium ambergris sillage remains pristine. SCENTAURA is not merely a fragrance; it is a signature of authority.
               </p>
             </div>
           </div>
@@ -46,13 +46,12 @@ export default function BrandStory() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1 }}
-                src="/model/p4.png"
-                alt="SENTAURA Brand Model Portrait"
+                alt="SCENTAURA Brand Model Portrait"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />
               <div className="absolute bottom-6 left-6 z-20 text-left">
                 <span className="text-[10px] font-sans tracking-[0.2em] text-primary font-bold uppercase">
-                  SENTAURA Homme
+                  SCENTAURA Homme
                 </span>
                 <h4 className="text-lg font-serif text-cream uppercase font-light">
                   A Bold Stature
@@ -76,7 +75,7 @@ export default function BrandStory() {
           <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-primary to-transparent mx-auto" />
           
           <p className="text-cream text-sm md:text-lg italic font-light max-w-2xl mx-auto leading-relaxed">
-            "SENTAURA represents the summit of fragrance creation—bold ingredients, timeless sillage, and hand-finished glass design. Formulated to declare a sophisticated presence that lingers forever."
+            "SCENTAURA represents the summit of fragrance creation—bold ingredients, timeless sillage, and hand-finished glass design. Formulated to declare a sophisticated presence that lingers forever."
           </p>
           
           <div className="space-y-1">

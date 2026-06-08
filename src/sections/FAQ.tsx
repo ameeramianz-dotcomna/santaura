@@ -49,19 +49,19 @@ function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
 
 const FAQS = [
   {
-    question: 'What is the oil concentration of SENTAURA?',
-    answer: 'SENTAURA is blended at an exceptional 25% fragrance oil loading, categorizing it as an Extrait de Parfum. This provides much greater performance, projection, and depth than typical Eau de Parfums or Eau de Toilettes.'
+    question: 'What is the oil concentration of SCENTAURA?',
+    answer: 'SCENTAURA is blended at an exceptional 25% fragrance oil loading, categorizing it as an Extrait de Parfum. This provides much greater performance, projection, and depth than typical Eau de Parfums or Eau de Toilettes.'
   },
   {
-    question: 'How long does SENTAURA typically last?',
-    answer: 'Due to our heavy concentration and premium fixatives, SENTAURA typically lasts 12+ hours on the skin. On fabrics, the scent profile of smoky birch and ambergris can last for several days.'
+    question: 'How long does SCENTAURA typically last?',
+    answer: 'Due to our heavy concentration and premium fixatives, SCENTAURA typically lasts 12+ hours on the skin. On fabrics, the scent profile of smoky birch and ambergris can last for several days.'
   },
   {
     question: 'How can I try the fragrance before opening the bottle?',
-    answer: 'We include a complimentary 2ml sample vial of SENTAURA with every 100ml purchase. We invite you to test the sample first. If you decide it is not your signature, you can return the unopened 100ml bottle for a full refund.'
+    answer: 'We include a complimentary 2ml sample vial of SCENTAURA with every 100ml purchase. We invite you to test the sample first. If you decide it is not your signature, you can return the unopened 100ml bottle for a full refund.'
   },
   {
-    question: 'Where are the SENTAURA ingredients sourced?',
+    question: 'Where are the SCENTAURA ingredients sourced?',
     answer: 'Our raw materials are sourced from sustainable growers worldwide. Our Bergamot is sourced from southern Italy, and our Moroccan Jasmine is hand-harvested at dawn to preserve the pure quality of the fragrance oils.'
   }
 ];

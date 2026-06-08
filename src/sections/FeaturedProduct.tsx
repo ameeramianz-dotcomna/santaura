@@ -61,7 +61,7 @@ const PRODUCTS: Record<string, Product> = {
 };
 
 const HOTSPOTS = [
-  { id: 'perfume', top: '75%', left: '25%', productId: 'perfume' }
+  { id: 'perfume', top: '82%', left: '15%', productId: 'perfume' }
 ];
 
 export default function FeaturedProduct() {
@@ -175,8 +175,8 @@ export default function FeaturedProduct() {
                     transition={{ duration: 0.25, ease: 'easeOut' }}
                     className="absolute z-30 bg-black/85 backdrop-blur-xl border border-white/10 rounded-lg p-4 shadow-2xl w-64 text-left pointer-events-auto flex flex-col justify-between"
                     style={{
-                      top: `calc(${HOTSPOTS.find(h => h.id === activeHotspotId)?.top} - 170px)`,
-                      left: `calc(${HOTSPOTS.find(h => h.id === activeHotspotId)?.left} - 110px)`,
+                      top: `calc(${HOTSPOTS.find(h => h.id === activeHotspotId)?.top} - 175px)`,
+                      left: '20px',
                     }}
                     onMouseEnter={() => setActiveHotspotId(activeHotspotId)}
                     onMouseLeave={() => setActiveHotspotId(null)}

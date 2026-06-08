@@ -21,158 +21,139 @@ export default function Hero() {
     const container = containerRef.current;
     if (!trigger || !container) return;
 
-    const mm = gsap.matchMedia();
+    // Create GSAP ScrollTrigger to track scroll progress and animate background layers
+    const scrollTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: trigger,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 1.5,
+        pin: container,
+        pinSpacing: false,
+      }
+    });
 
-    mm.add("(min-width: 768px)", () => {
-      // Create GSAP ScrollTrigger to track scroll progress and animate background layers
-      const scrollTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: trigger,
-          start: 'top top',
-          end: 'bottom bottom',
-          scrub: 1.5,
-          pin: container,
-          pinSpacing: false,
-        }
+    // Content fade-out animation
+    if (contentRef.current) {
+      scrollTl.to(contentRef.current, {
+        opacity: 0,
+        y: -60,
+        ease: 'none'
+      }, 0);
+    }
+
+    // Scroll indicator fade-out animation
+    if (indicatorRef.current) {
+      scrollTl.to(indicatorRef.current, {
+        opacity: 0,
+        y: 20,
+        ease: 'none'
+      }, 0);
+    }
+
+    // 3D Background slider animation
+    if (bg1Ref.current && bg2Ref.current && bg3Ref.current) {
+      gsap.set([bg1Ref.current, bg2Ref.current, bg3Ref.current], {
+        transformStyle: 'preserve-3d',
+        backfaceVisibility: 'hidden'
       });
+      gsap.set(bg1Ref.current, { opacity: 1, scale: 1.0, z: 0, rotateY: 0, rotateX: 0 });
+      gsap.set(bg2Ref.current, { opacity: 0, scale: 1.0, z: -150, rotateY: -15, rotateX: 10 });
+      gsap.set(bg3Ref.current, { opacity: 0, scale: 1.1, z: -150, rotateY: -15, rotateX: 10 });
 
-      // Content fade-out animation
-      if (contentRef.current) {
-        scrollTl.to(contentRef.current, {
+      scrollTl
+        // Transition from layer 1 (1.png) to layer 2 (2.png)
+        // Layer 1 zooms out from 1.0 to 0.9
+        .to(bg1Ref.current, {
           opacity: 0,
-          y: -60,
+          scale: 0.9,
+          z: 150,
+          rotateY: 15,
+          rotateX: -10,
+          duration: 1.0,
           ease: 'none'
-        }, 0);
-      }
+        }, 0)
+        // Layer 2 zooms in from 1.0 to 1.1
+        .to(bg2Ref.current, {
+          opacity: 1,
+          scale: 1.1,
+          z: 0,
+          rotateY: 0,
+          rotateX: 0,
+          duration: 1.0,
+          ease: 'none'
+        }, 0)
 
-      // Scroll indicator fade-out animation
-      if (indicatorRef.current) {
-        scrollTl.to(indicatorRef.current, {
+        // Hold middle state: Layer 2 continues to zoom in subtly from 1.1 to 1.12
+        .to(bg2Ref.current, {
+          scale: 1.12,
+          duration: 0.5,
+          ease: 'none'
+        }, 1.0)
+
+        // Transition from layer 2 (2.png) to layer 3 (3.png)
+        // Layer 2 continues to scale up slightly as it leaves
+        .to(bg2Ref.current, {
           opacity: 0,
-          y: 20,
+          scale: 1.18,
+          z: 150,
+          rotateY: 15,
+          rotateX: -10,
+          duration: 1.0,
           ease: 'none'
-        }, 0);
-      }
+        }, 1.5)
+        // Layer 3 transitions in and zooms out from 1.1 to 1.0
+        .to(bg3Ref.current, {
+          opacity: 1,
+          scale: 1.0,
+          z: 0,
+          rotateY: 0,
+          rotateX: 0,
+          duration: 1.0,
+          ease: 'none'
+        }, 1.5)
 
-      // 3D Background slider animation
-      if (bg1Ref.current && bg2Ref.current && bg3Ref.current) {
-        gsap.set([bg1Ref.current, bg2Ref.current, bg3Ref.current], {
-          transformStyle: 'preserve-3d',
-          backfaceVisibility: 'hidden'
-        });
-        gsap.set(bg1Ref.current, { opacity: 1, scale: 1.0, z: 0, rotateY: 0, rotateX: 0 });
-        gsap.set(bg2Ref.current, { opacity: 0, scale: 1.0, z: -150, rotateY: -15, rotateX: 10 });
-        gsap.set(bg3Ref.current, { opacity: 0, scale: 1.1, z: -150, rotateY: -15, rotateX: 10 });
+        // Layer 3 zooms back in from 1.0 to 1.1 (completing the zoom out-in effect)
+        .to(bg3Ref.current, {
+          scale: 1.1,
+          duration: 0.7,
+          ease: 'power1.out'
+        }, 2.5);
+    }
 
-        scrollTl
-          // Transition from layer 1 (1.png) to layer 2 (2.png)
-          // Layer 1 zooms out from 1.0 to 0.9
-          .to(bg1Ref.current, {
-            opacity: 0,
-            scale: 0.9,
-            z: 150,
-            rotateY: 15,
-            rotateX: -10,
-            duration: 1.0,
-            ease: 'none'
-          }, 0)
-          // Layer 2 zooms in from 1.0 to 1.1
-          .to(bg2Ref.current, {
-            opacity: 1,
-            scale: 1.1,
-            z: 0,
-            rotateY: 0,
-            rotateX: 0,
-            duration: 1.0,
-            ease: 'none'
-          }, 0)
+    if (leftTextRef.current && rightTextRef.current) {
+      gsap.set(leftTextRef.current, { opacity: 0, x: -80 });
+      gsap.set(rightTextRef.current, { opacity: 0, x: 80 });
 
-          // Hold middle state: Layer 2 continues to zoom in subtly from 1.1 to 1.12
-          .to(bg2Ref.current, {
-            scale: 1.12,
-            duration: 0.5,
-            ease: 'none'
-          }, 1.0)
+      scrollTl
+        // Slide left text in as Layer 2 comes in
+        .to(leftTextRef.current, {
+          opacity: 1,
+          x: 0,
+          duration: 0.7,
+          ease: 'power2.out'
+        }, 0.3)
 
-          // Transition from layer 2 (2.png) to layer 3 (3.png)
-          // Layer 2 continues to scale up slightly as it leaves
-          .to(bg2Ref.current, {
-            opacity: 0,
-            scale: 1.18,
-            z: 150,
-            rotateY: 15,
-            rotateX: -10,
-            duration: 1.0,
-            ease: 'none'
-          }, 1.5)
-          // Layer 3 transitions in and zooms out from 1.1 to 1.0
-          .to(bg3Ref.current, {
-            opacity: 1,
-            scale: 1.0,
-            z: 0,
-            rotateY: 0,
-            rotateX: 0,
-            duration: 1.0,
-            ease: 'none'
-          }, 1.5)
+        // Slide left text out as Layer 2 transitions out
+        .to(leftTextRef.current, {
+          opacity: 0,
+          x: -80,
+          duration: 0.7,
+          ease: 'power2.in'
+        }, 1.5)
 
-          // Layer 3 zooms back in from 1.0 to 1.1 (completing the zoom out-in effect)
-          .to(bg3Ref.current, {
-            scale: 1.1,
-            duration: 0.7,
-            ease: 'power1.out'
-          }, 2.5);
-      }
-
-      if (leftTextRef.current && rightTextRef.current) {
-        gsap.set(leftTextRef.current, { opacity: 0, x: -80 });
-        gsap.set(rightTextRef.current, { opacity: 0, x: 80 });
-
-        scrollTl
-          // Slide left text in as Layer 2 comes in
-          .to(leftTextRef.current, {
-            opacity: 1,
-            x: 0,
-            duration: 0.7,
-            ease: 'power2.out'
-          }, 0.3)
-
-          // Slide left text out as Layer 2 transitions out
-          .to(leftTextRef.current, {
-            opacity: 0,
-            x: -80,
-            duration: 0.7,
-            ease: 'power2.in'
-          }, 1.5)
-
-          // Slide right text in as Layer 3 comes in
-          .to(rightTextRef.current, {
-            opacity: 1,
-            x: 0,
-            duration: 0.7,
-            ease: 'power2.out'
-          }, 1.8);
-      }
-
-      return () => {
-        scrollTl.scrollTrigger?.kill();
-        scrollTl.kill();
-      };
-    });
-
-    mm.add("(max-width: 767px)", () => {
-      // Mobile: static layout, no scroll animation or pinning
-      if (bg1Ref.current && bg2Ref.current && bg3Ref.current) {
-        gsap.set(bg1Ref.current, { opacity: 1, scale: 1 });
-        gsap.set(bg2Ref.current, { opacity: 0 });
-        gsap.set(bg3Ref.current, { opacity: 0 });
-      }
-      if (leftTextRef.current) gsap.set(leftTextRef.current, { opacity: 0 });
-      if (rightTextRef.current) gsap.set(rightTextRef.current, { opacity: 0 });
-    });
+        // Slide right text in as Layer 3 comes in
+        .to(rightTextRef.current, {
+          opacity: 1,
+          x: 0,
+          duration: 0.7,
+          ease: 'power2.out'
+        }, 1.8);
+    }
 
     return () => {
-      mm.revert();
+      scrollTl.scrollTrigger?.kill();
+      scrollTl.kill();
     };
   }, []);
 
@@ -197,7 +178,7 @@ export default function Hero() {
   };
 
   return (
-    <div ref={triggerRef} id="home" className="relative h-screen md:h-[300vh] bg-black">
+    <div ref={triggerRef} id="home" className="relative h-[300vh] bg-black">
       
       {/* Pinned Frame */}
       <div 

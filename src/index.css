@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+
+  --color-primary: #D4A44A;
+  --color-secondary: #B87A1E;
+  --color-accent: #F2C76E;
+
+  --color-black: #0B0B0B;
+  --color-charcoal: #1A1A1A;
+  --color-slate: #2A2A2A;
+
+  --color-cream: #F7F3EB;
+  --color-beige: #E8DFC9;
+  --color-white: #FFFFFF;
+
+  --color-pineapple: #F2C94C;
+  --color-bergamot: #FFD166;
+  --color-blackCurrant: #2D1B3D;
+  --color-apple: #7A8B52;
+  --color-birch: #8B6A4F;
+  --color-rose: #D8A7A7;
+  --color-ambergris: #B87A1E;
+  --color-vanilla: #F5E6B3;
+
+  --color-heading: #F7F3EB;
+  --color-body: #D6D6D6;
+  --color-muted: #A8A8A8;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-black);
+  color: var(--color-body);
+  overflow-x: hidden;
+}
+
+/* Custom fade classes for the scroll animation */
+.fade-enter-left {
+  transform: translateX(-40px);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+}
+
+.fade-enter-right {
+  transform: translateX(40px);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+}
+
+.fade-active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Subtle pulse glow */
+@keyframes glow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.glow-effect {
+  animation: glow 6s infinite ease-in-out;
+}
+
+/* Custom fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom slow rotation for concierge / loader indicators */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
+/* Custom radial gradient utility */
+.bg-radial-gradient {
+  background-image: radial-gradient(var(--tw-gradient-stops));
+}
+
+/* Custom slow zoom for header hero background image */
+@keyframes slowZoom {
+  0%, 100% { transform: scale(1.03) translateZ(0); }
+  50% { transform: scale(1.10) translateZ(0); }
+}
+
+/* 3D Scroll Slider classes */
+.bg-stack {
+  position: absolute;
+  inset: 0;
+  filter: sepia(0.35) saturate(1.45) hue-rotate(5deg) brightness(0.82) contrast(1.1);
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+/* Animated border for cards */
+@keyframes border-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animated-border-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: transparent;
+  transition: all 0.5s ease;
+}
+
+.animated-border-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    var(--border-color-start, rgba(212, 164, 74, 0.1)) 20%,
+    var(--border-color-mid, rgba(212, 164, 74, 0.8)) 50%,
+    var(--border-color-end, rgba(212, 164, 74, 0.1)) 80%,
+    transparent
+  );
+  animation: border-rotate 8s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.animated-border-card::after {
+  content: '';
+  position: absolute;
+  inset: 1.5px; /* Thin line border thickness */
+  background: rgba(11, 11, 11, 0.75); /* Translucent dark body */
+  border-radius: 11px;
+  z-index: 1;
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+
+.animated-border-card:hover::after {
+  background: rgba(11, 11, 11, 0.85);
+}
+
+.animated-border-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover effect: speed up rotation and make border glow stronger */
+.animated-border-card:hover::before {
+  animation-duration: 4s;
+  background: conic-gradient(
+    transparent,
+    var(--border-color-start, rgba(212, 164, 74, 0.2)) 20%,
+    var(--border-color-mid-glow, rgba(212, 164, 74, 1)) 50%,
+    var(--border-color-end, rgba(212, 164, 74, 0.2)) 80%,
+    transparent
+  );
+}
+
+
